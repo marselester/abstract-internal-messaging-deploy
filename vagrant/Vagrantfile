@@ -1,0 +1,17 @@
+# -*- mode: ruby -*-
+
+Vagrant.configure('2') do |config|
+  config.vm.box = 'precise64'
+  config.vm.box_url = 'http://files.vagrantup.com/precise64.box'
+
+  config.vm.provider :virtualbox do |v|
+    v.customize ['modifyvm', :id, '--name', 'messaging-part-2']
+    v.customize ['modifyvm', :id, '--memory', 1024]
+  end
+
+  config.vm.hostname = 'messaging-part-2'
+
+  config.vm.network :private_network, ip: '11.22.33.44'
+
+  config.vm.synced_folder '../../abstract-internal-messaging', '/home/vagrant/abstract-internal-messaging'
+end

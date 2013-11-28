@@ -1,0 +1,3 @@
+postgresql_user: jon_snow
+postgresql_password: ghost_strong_password
+postgresql_db: jon_snow
